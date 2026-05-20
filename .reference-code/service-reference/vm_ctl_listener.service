@@ -1,0 +1,15 @@
+[Unit]
+Description=MicroPython Trigger Listener
+After=network.target
+
+[Service]
+User=biud
+WorkingDirectory=/srv/srvc/proxman/src
+
+ExecStart=/srv/srvc/proxman/.venv/bin/python3 /srv/srvc/proxman/src/listener.py
+
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
